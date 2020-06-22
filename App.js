@@ -1,11 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Alert, Text, View, Button, SafeAreaView, Image, TouchableWithoutFeedback } from 'react-native';
 
 export default function App() {
+  console.log("app executed");
+  const handlePress = () => console.log("Text Pressed");
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text numberOfLines={1} onPress={handlePress}>
+        Hello react native...!  hiii aaa
+            </Text>
+      <TouchableWithoutFeedback >
+        <Image
+          blurRadius={10}
+          fadeDuration={1000}
+          source={{
+            width: 208,
+
+            height: 300,
+            uri: "https://picsum.photos/200/300"
+          }} />
+
+      </TouchableWithoutFeedback>
+
+      <Button
+        color="orange"
+        title="click here"
+        onPress={() => console.log("oops, button was pressed")}
+      />
+
+    </SafeAreaView>
   );
 }
 
